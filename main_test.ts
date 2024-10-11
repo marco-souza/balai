@@ -1,6 +1,15 @@
 import { assertEquals } from "@std/assert";
-import { add } from "./main.ts";
+import { server } from "./main.ts";
 
-Deno.test(function addTest() {
-  assertEquals(add(2, 3), 5);
+Deno.test("server", async () => {
+  const s = server();
+
+  Deno.test("fetch root path", async () => {
+    const res = await fetch("http://localhost:" + s.addr.port);
+
+    assertEquals(res.status, 200);
+    assertEquals(await res.text(), "Hono!");
+  });
+
+  await s.shutdown();
 });
