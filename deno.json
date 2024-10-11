@@ -4,6 +4,7 @@
   "exports": "main.ts",
   "description": "A simple Deno + Hono app",
   "tasks": {
+    "fmt": "deno fmt",
     "dev": "deno run --allow-net --allow-env --watch main.ts",
     "test": "deno test --allow-net --allow-env"
   },
