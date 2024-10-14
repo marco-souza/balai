@@ -10,9 +10,9 @@
     "test": "deno test -RWNE --allow-ffi"
   },
   "imports": {
-    "~/": "./",
     "@hono/hono": "jsr:@hono/hono@^4.6.4",
-    "@std/assert": "jsr:@std/assert@2"
+    "@std/assert": "jsr:@std/assert@^1.0.6",
+    "~/": "./"
   },
   "deploy": {
     "project": "c3bbf290-d9fc-4a96-8784-48ad1198e742",
